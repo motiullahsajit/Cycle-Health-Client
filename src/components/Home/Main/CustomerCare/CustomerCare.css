@@ -1,0 +1,13 @@
+.customer-care{
+    background:linear-gradient(0deg, #582d086c, #582d086c), url('../../../../images/customercare.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+.contact-icon{
+    font-size: 3.5rem;
+}
+.customer-inner{
+    height: 15rem;
+}

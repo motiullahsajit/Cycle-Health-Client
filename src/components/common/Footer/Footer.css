@@ -1,0 +1,23 @@
+.footer-area{
+    background:linear-gradient(0deg, #33333380, #33333380), url(../../../images/footerBg.jpg);
+    background-size: cover;
+}
+.footer-area li{
+    padding-bottom: 10px;
+}
+a{
+    text-decoration: none;
+    color:#fff !important;
+}
+.social-media .icon{
+    height: 40px;
+    width: 40px;
+    color: #EE4D01;
+    border-radius: 50%;
+    border: 1px solid #EE4D01;
+    padding: 10px;
+}
+.social-media .icon:hover{
+    background-color: #EE4D01 ;
+    color:white;
+}

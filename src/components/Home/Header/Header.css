@@ -1,0 +1,17 @@
+.header{
+    background:linear-gradient(0deg, #33333380, #33333380), url('../../../images/headerbg.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+.header-text{
+    height: 22rem;
+}
+.heading-text{
+    color: #fff;
+    font-size: 3.5rem;
+    margin-top: 3rem;
+}
+.short-text{
+    font-size: 1.2rem;
+    color: #EE4D01;
+}
