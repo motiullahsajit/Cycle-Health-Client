@@ -2,8 +2,7 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import NotFound from './components/NotFound/NotFound';
 import Home from './components/Home/Home';
@@ -11,6 +10,7 @@ import { createContext, useState } from 'react';
 import DashBoard from './components/DashBoard/DashBoard';
 import ContactUs from './components/ContactUs/ContactUs';
 import Login from './components/Login/Login';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
 
@@ -28,9 +28,9 @@ function App() {
             <Route path="/home">
               <Home />
             </Route>
-            <Route path="/dashboard">
+            <PrivateRoute path="/dashboard">
               <DashBoard />
-            </Route>
+            </PrivateRoute>
             <Route path="/contactUs">
               <ContactUs />
             </Route>

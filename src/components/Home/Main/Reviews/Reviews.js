@@ -6,7 +6,7 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
-            const data = await axios('http://localhost:5055/reviews')
+            const data = await axios('https://cycle-health-server.herokuapp.com/reviews')
             return data;
         }
         fetchData().then(data => setReviews(data.data))

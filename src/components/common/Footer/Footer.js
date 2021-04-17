@@ -1,8 +1,6 @@
 import React from 'react';
 import './Footer.css';
 import FooterCol from '../FooterCol/FooterCol';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle } from '@fortawesome/free-regular-svg-icons';
 const Footer = () => {
     const quickContact = [
         { title: 'Cell: +62 821 2345 6789', link: "/" },
@@ -42,7 +40,7 @@ const Footer = () => {
                     <FooterCol key={4} menuTitle="MORE" menuItems={more} />
                 </div>
                 <div className="col text-light text-center">
-                    <h2 className='text-brand my-4'>SUBSCRIBE NEWSLETTER</h2>
+                    <h2 className='text-brand my-4'>SUBSCRIBE OUR NEWSLETTER</h2>
                     <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</h5>
                     <div className="my-5 d-flex justify-content-center align-items-center">
                         <input type="text" className='w-50 p-2' />

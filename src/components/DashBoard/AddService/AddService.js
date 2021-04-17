@@ -15,7 +15,7 @@ const AddService = () => {
             price: data.price,
             description: data.description,
         }
-        fetch('http://localhost:5055/addService', {
+        fetch('https://cycle-health-server.herokuapp.com/addService', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -42,7 +42,7 @@ const AddService = () => {
         <div className="col-md-4">
             <h2 className='text-brand text-center'>Service Information</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input name="name" className='w-100 py-2 my-2' placeholder='Service name' {...register("name", { required: true })} />
+                <input name="name" className='w-100 py-2 my-2' placeholder='Service name' type="text" {...register("name", { required: true })} />
                 <input name="price" className='w-100 py-2 my-2' placeholder='Service price' type='number' {...register("price", { required: true })} />
                 <input name="description" className='w-100 py-2 my-2' placeholder='Description' type="text" {...register("description", { required: true })} />
                 <h5 className="text-secondary">Select Image</h5>

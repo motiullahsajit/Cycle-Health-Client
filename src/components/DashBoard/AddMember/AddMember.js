@@ -2,12 +2,12 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { useHistory } from 'react-router';
-const AddReview = () => {
-    document.title = 'Add Reviw';
+
+const AddMember = () => {
+    document.title = 'Add Member';
     const { register, handleSubmit, formState: { errors } } = useForm();
     const history = useHistory();
     const [imageURL, setImageURL] = useState(null);
-
 
     const handleImageUpload = event => {
         const imageData = new FormData();
@@ -24,32 +24,30 @@ const AddReview = () => {
     }
 
     const onSubmit = data => {
-        const reviewData = {
+        const memberData = {
             name: data.name,
             imageURL: imageURL,
-            companyName: data.companyName,
-            review: data.review,
-            rating: data.rating,
+            postion: data.postion,
+            email: data.email
         }
-        fetch('https://cycle-health-server.herokuapp.com/addReview', {
+        fetch('https://cycle-health-server.herokuapp.com/addMember', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(reviewData)
+            body: JSON.stringify(memberData)
         })
-        history.push(`/dashboard/manageServices`);
+        history.push(`/dashboard/team`);
     };
 
     return (
         <div className="col-md-4">
-            <h2 className='text-brand'>Your Review</h2>
+            <h2 className='text-brand'>Detail Information</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input name="name" className='w-100 py-2 my-2' placeholder='Your name' type="text" {...register("name", { required: true })} />
-                <input name="companyName" className='w-100 py-2 my-2' placeholder="Company's name Designation" type="text" {...register("companyName", { required: true })} />
-                <input name="review" className='w-100 py-2 my-2' placeholder='Description' type="text" {...register("review", { required: true })} />
-                <input name="rating" className='w-100 py-2 my-2' placeholder='Your Ratings' type="number" {...register("rating", { required: true })} />
-                <h5 className="text-secondary">Your Image</h5>
+                <input name="name" className='w-100 py-2 my-2' placeholder='Name' type="text" {...register("name", { required: true })} />
+                <input name="postion" className='w-100 py-2 my-2' placeholder='Postion' type="text" {...register("postion", { required: true })} />
+                <input name="email" className='w-100 py-2 my-2' placeholder='Email' type="text" {...register("email", { required: true })} />
+                <h5 className="text-secondary">Image</h5>
                 <input name="imageURL" className='my-3' type="file" onChange={handleImageUpload} />
                 {errors.exampleRequired && <span>This field is required</span>}
                 <input className='btn btn-brand-filled w-100' type="submit" value='Submit' />
@@ -58,4 +56,4 @@ const AddReview = () => {
     );
 };
 
-export default AddReview;
+export default AddMember;

@@ -7,7 +7,7 @@ const Profile = ({ signOut }) => {
     return (
         <>
             <Navbar />
-            <div className='container mt-5'>
+            <section className='container mt-5'>
                 <h2 className='text-brand text-center my-5'>Your Profile</h2>
                 <div className="row d-flex align-items-center">
                     <div className="col-md-2">
@@ -17,9 +17,9 @@ const Profile = ({ signOut }) => {
                         <h4>Name: {loggedInUser.displayName}</h4>
                         <h4>Email: {loggedInUser.email}</h4>
                     </div>
-                    <div className="col-md-2"> <button className='btn btn-brand text-white w-100 rounded-0' onClick={signOut}>Sign Out</button></div>
+                    <div className="col-md-2"> <button className='btn btn-brand-filled text-white w-100 rounded-0' onClick={signOut}>Sign Out</button></div>
                 </div>
-            </div>
+            </section>
         </>
     );
 };

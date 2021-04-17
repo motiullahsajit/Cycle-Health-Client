@@ -13,18 +13,18 @@ const WorkSample = () => {
             <div className="row">
                 <div className="col-md-7">
                     <div className="row my-3">
-                        <div className="col-md-8">
+                        <div className="col-md-8 my-1">
                             <img className='work-img' src={sample1} alt="" />
                         </div>
-                        <div className="col-md-4">
+                        <div className="col-md-4 my-1">
                             <img className='work-img' src={sample2} alt="" />
                         </div>
                     </div>
                     <div className="row my-3">
-                        <div className="col-md-5">
+                        <div className="col-md-5 my-1">
                             <img className='work-img' src={sample3} alt="" />
                         </div>
-                        <div className="col-md-7">
+                        <div className="col-md-7 my-1">
                             <img className='work-img' src={sample4} alt="" />
                         </div>
                     </div>

@@ -1,8 +1,12 @@
 import React from 'react';
+import { useHistory } from 'react-router';
 
 const Service = ({ service }) => {
-    const { imageURL, name, description, price } = service;
-
+    const { imageURL, name, description, price ,_id} = service;
+    const history = useHistory()
+    const handleBooking = () => {
+        history.push(`dashboard/booking/${_id}`);
+    }
     return (
         <div className="col-md-4 my-2">
             <div className="card h-100">
@@ -12,7 +16,7 @@ const Service = ({ service }) => {
                     <p className="card-text">{description}</p>
                     <div className="d-flex justify-content-between">
                         <p className="card-text">Price: {price} $</p>
-                        <button className="btn btn-brand-filled">Purchase</button>
+                        <button onClick={handleBooking} className="btn btn-brand-filled">Purchase</button>
                     </div>
                 </div>
             </div>

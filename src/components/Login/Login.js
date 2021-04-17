@@ -93,7 +93,7 @@ const Login = () => {
                 <Profile signOut={signOut} />
                 :
                 <>
-                    <div className="col-md-5 mt-5 container bg-none b-2 p-3">
+                    <section className="col-md-4 mt-5 container bg-none b-2 p-3">
                         <form onSubmit={handleSubmit} className="form my-4">
                             {
                                 option === 'signUp' ? <h2 className='text-brand text-center my-3'>Create an account</h2> : <h2 className='text-brand text-center my-3'>Login</h2>
@@ -122,9 +122,9 @@ const Login = () => {
                             <div className="mb-3 d-grid">
                                 {
                                     option === 'signUp' ?
-                                        <button type="submit" className="btn btn-brand text-white w-100">Create an account</button>
+                                        <button type="submit" className="btn btn-brand w-100">Create an account</button>
                                         :
-                                        <button type="submit" className="btn btn-brand text-white w-100">Login</button>
+                                        <button type="submit" className="btn btn-brand w-100">Login</button>
                                 }
                             </div>
                             {
@@ -135,7 +135,7 @@ const Login = () => {
                         <h3 className='text-brand text-center'>Or</h3>
                         <button type="submit" onClick={handleGoogleSingIn} className="btn btn-brand my-1 w-100">With Google</button>
                         <button type="submit" onClick={handleFacebookSingIn} className="btn btn-brand my-1 w-100">With Facebook</button>
-                    </div>
+                    </section>
                 </>
         } </>
     );
