@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router';
 import Navbar from '../common/Navbar/Navbar';
-import Services from '../Home/Main/Services/Services';
 import AddMember from './AddMember/AddMember';
 import AddReview from './AddReview/AddReview';
 import AddService from './AddService/AddService';
