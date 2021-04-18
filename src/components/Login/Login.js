@@ -3,7 +3,8 @@ import { useHistory, useLocation } from 'react-router';
 import { UserContext } from '../../App';
 import Profile from '../Profile/Profile';
 import { createUserWithEmailAndPassword, googleSingIn, initializeLoginFramework, signInWithEmailAndPassword, handleSignOut, facebookSingIn, } from './LoginManager';
-
+import './Login.css'
+import Navbar from '../common/Navbar/Navbar';
 
 const Login = () => {
     document.title = 'Login';
@@ -14,7 +15,7 @@ const Login = () => {
     const [formData, setFormData] = useState({});
     let history = useHistory();
     let location = useLocation();
-    let { from } = location.state || { from: { pathname: "/" } };
+    let { from } = location.state || { from: { pathname: "/dashboard" } };
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfrimPassword] = useState('')
 
@@ -88,15 +89,16 @@ const Login = () => {
     }
 
     return (
-        <>  {
+        <main className='login-bg'>  {
             loggedInUser.email ?
                 <Profile signOut={signOut} />
                 :
                 <>
-                    <section className="col-md-4 mt-5 container bg-none b-2 p-3">
-                        <form onSubmit={handleSubmit} className="form my-4">
+                    <Navbar />
+                    <section className="col-md-3 container">
+                        <form onSubmit={handleSubmit} className="form mb-2 mt-5">
                             {
-                                option === 'signUp' ? <h2 className='text-brand text-center my-3'>Create an account</h2> : <h2 className='text-brand text-center my-3'>Login</h2>
+                                option === 'signUp' ? <h1 className='text-brand text-center my-3'>Create an account</h1> : <h1 className='text-brand text-center my-3'>Login</h1>
                             }
                             {
                                 option === 'signUp' && <div className="mb-3">
@@ -117,27 +119,30 @@ const Login = () => {
                             <p className='text-danger'>{error}</p>
                             <div className="mb-3 form-check">
                                 <input type="checkbox" className="form-check-input" />
-                                <label className="form-check-label">Remember me</label>
+                                <label className="form-check-label text-white">Remember me</label>
                             </div>
-                            <div className="mb-3 d-grid">
+                            <div className="mb-2 d-grid">
                                 {
                                     option === 'signUp' ?
-                                        <button type="submit" className="btn btn-brand w-100">Create an account</button>
+                                        <button type="submit" className="btn btn-brand-filled w-100">Create an account</button>
                                         :
-                                        <button type="submit" className="btn btn-brand w-100">Login</button>
+                                        <button type="submit" className="btn btn-brand-filled w-100">Login</button>
                                 }
                             </div>
                             {
-                                option === 'signUp' ? <> <p>Already have an account? <span className='text-brand' onClick={() => setOption('login')}>Login</span></p></> :
-                                    <> <p>Don't have an account? <span className='text-brand' onClick={() => setOption('signUp')}>Create an account</span></p></>
+                                option === 'signUp' ? <> <p className='text-white'>Already have an account? <span className='text-brand' onClick={() => setOption('login')}>Login</span></p></> :
+                                    <> <p className='text-white'>Don't have an account? <span className='text-brand' onClick={() => setOption('signUp')}>Create an account</span></p></>
                             }
                         </form>
-                        <h3 className='text-brand text-center'>Or</h3>
-                        <button type="submit" onClick={handleGoogleSingIn} className="btn btn-brand my-1 w-100">With Google</button>
-                        <button type="submit" onClick={handleFacebookSingIn} className="btn btn-brand my-1 w-100">With Facebook</button>
+                        {
+                            option === 'signUp' && <>  <h3 className='text-brand text-center'>Or</h3>
+                                <button type="submit" onClick={handleGoogleSingIn} className="btn btn-brand-filled my-1 w-100">With Google</button>
+                                <button type="submit" onClick={handleFacebookSingIn} className="btn btn-brand-filled my-1 w-100">With Facebook</button>
+                            </>
+                        }
                     </section>
                 </>
-        } </>
+        } </main>
     );
 };
 

@@ -9,7 +9,7 @@ import WorkSample from './WorkSample/WorkSample';
 
 const Main = () => {
     return (
-        <main>
+        <main className='bg-main py-5'>
             <OverView />
             <Services />
             <WorkSample />

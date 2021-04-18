@@ -13,7 +13,7 @@ const Profile = ({ signOut }) => {
                     <div className="col-md-2">
                         <img className='rounded' src={loggedInUser.photoURL} alt="" />
                     </div>
-                    <div className="col-md-8">
+                    <div className="text-light col-md-8">
                         <h4>Name: {loggedInUser.displayName}</h4>
                         <h4>Email: {loggedInUser.email}</h4>
                     </div>

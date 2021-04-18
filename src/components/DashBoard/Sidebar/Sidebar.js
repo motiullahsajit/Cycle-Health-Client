@@ -27,61 +27,62 @@ const Sidebar = () => {
     return (
         <aside className="sidebar d-flex flex-column justify-content-between col py-5 px-4">
             <ul className="list-unstyled">
-                <li>
-                    <Link to='/' className="text-white">
-                        <FontAwesomeIcon icon={faShoppingCart} /> <span>Booking</span>
-                    </Link>
-                </li>
-                <li>
-                    <Link to={`${url}/bookingList`} className="text-white">
-                        <FontAwesomeIcon icon={faShoppingBag} /> <span>Booking List</span>
-                    </Link>
-                </li>
-                <li>
-                    <Link to={`${url}/addReview`} className="text-white">
-                        <FontAwesomeIcon icon={faComments} /> <span>Review</span>
-                    </Link>
-                </li>
-                <li>
-                    <Link to={`${url}/manageReviews`} className="text-white">
-                        <FontAwesomeIcon icon={faCommentAlt} /> <span>Manage Review</span>
-                    </Link>
-                </li>
-                {
-                    isAdmin && <>
+                {isAdmin ? <>
+                    <li>
+                        <Link to={`${url}/manageReviews`} className="text-white">
+                            <FontAwesomeIcon icon={faCommentAlt} /> <span>Manage Review</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={`${url}/orderList`} className="text-white">
+                            <FontAwesomeIcon icon={faList} /> <span>Order List</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={`${url}/addService`} className="text-white">
+                            <FontAwesomeIcon icon={faPlusSquare} /> <span>Add service</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={`${url}/manageServices`} className="text-white" >
+                            <FontAwesomeIcon icon={faTasks} /> <span>Mange Services</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={`${url}/makeAdmin`} className="text-white" >
+                            <FontAwesomeIcon icon={faUserPlus} /> <span>Make Admin</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={`${url}/admins`} className="text-white" >
+                            <FontAwesomeIcon icon={faUsersCog} /> <span>Admins</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={`${url}/team`} className="text-white" >
+                            <FontAwesomeIcon icon={faUsers} /> <span>Team</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={`${url}/addMember`} className="text-white" >
+                            <FontAwesomeIcon icon={faUsers} /> <span>Add Team Member</span>
+                        </Link>
+                    </li>
+                </> :
+                    <>
                         <li>
-                            <Link to={`${url}/orderList`} className="text-white">
-                                <FontAwesomeIcon icon={faList} /> <span>Order List</span>
+                            <Link to={`${url}/booking/booking`} className="text-white">
+                                <FontAwesomeIcon icon={faShoppingCart} /> <span>Booking</span>
                             </Link>
                         </li>
                         <li>
-                            <Link to={`${url}/addService`} className="text-white">
-                                <FontAwesomeIcon icon={faPlusSquare} /> <span>Add service</span>
+                            <Link to={`${url}/bookingList`} className="text-white">
+                                <FontAwesomeIcon icon={faShoppingBag} /> <span>Booking List</span>
                             </Link>
                         </li>
                         <li>
-                            <Link to={`${url}/manageServices`} className="text-white" >
-                                <FontAwesomeIcon icon={faTasks} /> <span>Mange Services</span>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to={`${url}/makeAdmin`} className="text-white" >
-                                <FontAwesomeIcon icon={faUserPlus} /> <span>Make Admin</span>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to={`${url}/admins`} className="text-white" >
-                                <FontAwesomeIcon icon={faUsersCog} /> <span>Admins</span>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to={`${url}/team`} className="text-white" >
-                                <FontAwesomeIcon icon={faUsers} /> <span>Team</span>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to={`${url}/addMember`} className="text-white" >
-                                <FontAwesomeIcon icon={faUsers} /> <span>Add Team Member</span>
+                            <Link to={`${url}/addReview`} className="text-white">
+                                <FontAwesomeIcon icon={faComments} /> <span>Review</span>
                             </Link>
                         </li>
                     </>

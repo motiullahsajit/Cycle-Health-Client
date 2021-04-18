@@ -34,7 +34,7 @@ function App() {
             <Route path="/contactUs">
               <ContactUs />
             </Route>
-            <Route path="/Login">
+            <Route path="/login">
               <Login />
             </Route>
             <Route path="*">

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 
 const TeamListItem = ({ member }) => {
-    const { name, email, _id } = member;
+    const { name, email, _id, postion } = member;
     const history = useHistory()
     const handleRemove = () => {
         fetch(`https://cycle-health-server.herokuapp.com/removeMember/${_id}`, {
@@ -47,14 +47,15 @@ const TeamListItem = ({ member }) => {
     }
 
     return (
-        <div className='row'>
-            <div className="col my-2">{name}</div>
-            <div className="col my-2">{email}</div>
+        <div className='row bg-white text-dark my-2 align-items-center'>
+            <div className="col-3 my-2"><h5>{name}</h5></div>
+            <div className="col-3 my-2"><h5>{email}</h5></div>
+            <div className="col-2 my-2"><h5>{postion}</h5></div>
             {
-                isAdmin ? <div className="col my-2"><span className='badge bg-success'>Already Admin</span></div> : <div className="col my-2"><button onClick={makeAdmin} className="btn btn-success">Make Admin</button></div>
+                isAdmin ? <div className="col-2 mt-3 mb-2"><h5 className='badge py-2 bg-success text-white'>Already Admin</h5></div> : <div className="col-2 my-2"><button onClick={makeAdmin} className="btn btn-warning">Make Admin</button></div>
             }
-            <div className="col my-2"><button onClick={handleRemove} className="btn btn-danger">Remove</button></div>
-                </div>
+            <div className="col-2 my-2"><button onClick={handleRemove} className="btn btn-danger">Remove</button></div>
+        </div>
     );
 };
 

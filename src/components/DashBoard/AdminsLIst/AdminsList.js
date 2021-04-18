@@ -15,10 +15,10 @@ const AdminsList = ({ admin }) => {
     };
 
     return (
-        <div className='row'>
-            <div className="col my-2">{name}</div>
-            <div className="col my-2">{email}</div>
-            <div className="col my-2"><button onClick={handleRemove} className="btn btn-danger">Remove</button></div>
+        <div className='row bg-white my-2'>
+            <div className="col-4"><h5>{name}</h5></div>
+            <div className="col-6"><h5>{email}</h5></div>
+            <div className="col-2"><button onClick={handleRemove} className="btn btn-danger">Remove</button></div>
         </div>
     );
 };

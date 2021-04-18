@@ -18,12 +18,14 @@ const ServicesList = ({ service }) => {
             })
     };
     return (
-        <div className='col-md-6 m-2 text-seconday border border-secondary d-flex justify-content-around align-items-center bg-white rounded'>
-            <div className='col-6 fs-3'> <h5>{name}</h5></div>
-            <div className='col-2 fs-3'> <h5>৳ {price}</h5></div>
-            <div className='col-1'> <Link to={`/dashboard/updateService/${_id}`}><span className="fas fa-trash fs-4 px-4 text-success"><FontAwesomeIcon icon={faPen} /></span></Link></div>
-            <div className='col-1'> <span className="fas fa-trash fs-4 text-danger" onClick={() => removeService(_id)}><FontAwesomeIcon icon={faTrash} />
-            </span></div>
+        <div className='col-md-6 m-2 text-dark row align-items-center bg-white rounded'>
+            <div className='col-6'> <h5>{name}</h5></div>
+            <div className='col-3'> <h5>{price} $</h5></div>
+            <div className="col-3 row">
+                <div className='col-6'> <Link to={`/dashboard/updateService/${_id}`}><span className="fas fa-trash px-4 text-success"><FontAwesomeIcon icon={faPen} /></span></Link></div>
+                <div className='col-6'> <span className="fas fa-trash text-danger" onClick={() => removeService(_id)}><FontAwesomeIcon icon={faTrash} />
+                </span></div>
+            </div>
         </div >
     );
 };

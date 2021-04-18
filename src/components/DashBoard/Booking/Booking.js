@@ -8,11 +8,10 @@ import ProcessPayment from './ProcessPayment/ProcessPayment';
 const Booking = () => {
     const { id } = useParams();
     const [loggedInUser] = useContext(UserContext);
-    const [bookingItem, setBookingItem] = useState({})
+    const [bookingItem, setBookingItem] = useState({});
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     useEffect(() => {
-
         const fetchData = async () => {
             const data = await axios(`https://cycle-health-server.herokuapp.com/service/${id}`);
             return data;
@@ -50,6 +49,7 @@ const Booking = () => {
 
     return (
         <>
+        {id==='booking' && <h1 className='text-brand my-3'>You haven't selected the service..!!</h1> }
             <div className='col-md-4'>
                 <h2 className='text-brand'>Booking Details</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>

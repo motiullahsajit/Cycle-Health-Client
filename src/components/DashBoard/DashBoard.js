@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router';
+import { UserContext } from '../../App';
 import Navbar from '../common/Navbar/Navbar';
 import AddMember from './AddMember/AddMember';
 import AddReview from './AddReview/AddReview';
@@ -16,9 +17,26 @@ import TeamList from './TeamList/TeamList';
 import UpdateService from './UpdateService/UpdateService';
 
 const DashBoard = () => {
+    document.title = 'Dashboard';
+    const [loggedInUser] = useContext(UserContext);
+    const [isAdmin, setIsAdmin] = useState(false);
+
+    useEffect(() => {
+        fetch('https://cycle-health-server.herokuapp.com/isAdmin', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ email: loggedInUser.email })
+        })
+            .then(res => res.json())
+            .then(data => setIsAdmin(data))
+    }, [loggedInUser.email])
+
     let { path } = useRouteMatch();
+
     return (
-        <main>
+        <main className='bg-dashboard'>
             <div className="row">
                 <div className="col-md-2">
                     <Sidebar />
@@ -27,7 +45,9 @@ const DashBoard = () => {
                     <Navbar />
                     <Switch>
                         <Route exact path={path}>
-                            <BookingList />
+                            {
+                                isAdmin ? <Orders /> : <AddReview />
+                            }
                         </Route>
                         <Route path={`${path}/booking/:id`}>
                             <Booking />

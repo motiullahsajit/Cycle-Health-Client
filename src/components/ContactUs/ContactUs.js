@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../common/Navbar/Navbar';
 import './ContactUs.css'
 const ContactUs = () => {
+    document.title = 'Contact Us';
     return (
         <>
             <section className="contact">

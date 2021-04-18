@@ -4,7 +4,7 @@ import './ProgressItem.css'
 const ProgressItem = ({ progressItem }) => {
     const { subject, percentage, description } = progressItem;
     return (
-        <div className="col-md-4">
+        <div className="col-lg-4 col-md-6 col-sm-12 tranfrom-hover">
             <div className="card">
                 <div className="progress mx-auto"> <span className="progress-left"> <span className="progress-bar"></span> </span> <span className="progress-right"> <span className="progress-bar"></span> </span>
                     <div className="progress-value">{percentage}%</div>

@@ -32,7 +32,7 @@ const Footer = () => {
     ]
     return (
         <footer className="footer-area clear-both text-light pb-2">
-            <div className="container mt-3 pt-5">
+            <div className="container pt-5">
                 <div className="row py-3">
                     <FooterCol key={1} menuTitle="QUICK CONTACT" menuItems={quickContact} />
                     <FooterCol key={2} menuTitle="COMPANY" menuItems={company} />

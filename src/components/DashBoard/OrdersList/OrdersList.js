@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
 const OrdersList = ({ order }) => {
+    document.title = 'Order List';
     const { name, email, serviceName, status, _id } = order;
     const [updateItem, setUpdateItem] = useState();
 
@@ -27,11 +28,11 @@ const OrdersList = ({ order }) => {
     };
 
     return (
-        <section className='m-2 text-seconday border border-secondary d-flex justify-content-around align-items-center bg-white rounded'>
-            <div className='col-2 fs-3'> <h5>{name}</h5></div>
-            <div className='col-2 fs-3'> <h5> {email}</h5></div>
-            <div className='col-2 fs-3'> <h5>{serviceName}</h5></div>
-            <div className='col-2 fs-3'> <h5>{status}</h5></div>
+        <section className='m-2 text-dark d-flex justify-content-around align-items-center py-3 bg-white rounded'>
+            <div className='col-2'> <h5>{name}</h5></div>
+            <div className='col-2'> <h5> {email}</h5></div>
+            <div className='col-2'> <h5>{serviceName}</h5></div>
+            <div className='col-2'> <h5>{status}</h5></div>
             <div className="col-2 d-flex justify-content-between">
                 {
                     updateItem?.status !== 'Done' && <div className='col'>

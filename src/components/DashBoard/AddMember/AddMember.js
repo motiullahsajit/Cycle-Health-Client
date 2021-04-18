@@ -42,7 +42,7 @@ const AddMember = () => {
 
     return (
         <div className="col-md-4">
-            <h2 className='text-brand'>Detail Information</h2>
+            <h2 className='text-brand'>Member Information</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input name="name" className='w-100 py-2 my-2' placeholder='Name' type="text" {...register("name", { required: true })} />
                 <input name="postion" className='w-100 py-2 my-2' placeholder='Postion' type="text" {...register("postion", { required: true })} />

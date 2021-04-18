@@ -9,13 +9,13 @@ const Reviews = () => {
             const data = await axios('https://cycle-health-server.herokuapp.com/reviews')
             return data;
         }
-        fetchData().then(data => setReviews(data.data))
+        fetchData().then(data => setReviews(data?.data))
     }, [])
 
     return (
         <div className='my-5 container'>
-            <h1 className='text-brand text-center'>What Clients Say!!!</h1>
-            <div className="row d-flex justify-content-around">
+            <h1 className='text-brand text-center my-5'>What Clients Say!!!</h1>
+            <div className="row d-flex">
                 {
                     reviews.map(review => <Review key={review.name} reviewItem={review} />)
                 }

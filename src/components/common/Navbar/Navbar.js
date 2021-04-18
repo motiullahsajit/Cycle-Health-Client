@@ -16,7 +16,7 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ml-auto mr-5 d-flex align-items-center">
                         <li className="nav-item mx-1">
-                            <Link className="nav-link mx-1" to='/'>Home</Link>
+                            <Link className="nav-link mx-1" to='/home'>Home</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link mx-1" to='/contactUs'>Contact</Link>

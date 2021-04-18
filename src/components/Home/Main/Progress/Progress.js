@@ -26,7 +26,7 @@ const Progress = () => {
             <p className='text-secondary my-5'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             <div className="row">
                 {
-                    progressItems.map(progressItem => <ProgressItem progressItem={progressItem} />)
+                    progressItems.map(progressItem => <ProgressItem key={progressItem.percentage} progressItem={progressItem} />)
                 }
             </div>
         </section>

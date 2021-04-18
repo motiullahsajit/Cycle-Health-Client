@@ -1,5 +1,5 @@
-.contact{
-    background:linear-gradient(0deg, #33333380, #33333380), url(../../images/customercare.jpg);
+.login-bg{
+    background:linear-gradient(0deg, #33333380, #33333380), url(../../images/headerbg.jpg);
     position: relative;
     background-size: cover;
     background-repeat: no-repeat;

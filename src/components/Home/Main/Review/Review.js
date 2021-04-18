@@ -5,10 +5,10 @@ import React from 'react';
 const Review = ({ reviewItem }) => {
     const { name, review, imageURL, companyName, rating } = reviewItem;
     return (
-        <div className='col-md-4 my-2'>
+        <div className='tranfrom-hover col-lg-4 col-md-6 col-sm-12 my-2'>
                 <div className="card border border-secondary">
                 <div className="row p-2">
-                    <div className="col-md-4">
+                    <div className="col-md-3">
                         <img src={imageURL} className='img-fluid' alt="" />
                     </div>
                     <div className="col-md-8">

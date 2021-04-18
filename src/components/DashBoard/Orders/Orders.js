@@ -18,16 +18,16 @@ const Orders = () => {
 
     return (
         <>
-            <div className='m-2 text-seconday border border-secondary d-flex justify-content-around align-items-center bg-white rounded'>
-                < div className='col-2 fs-3'> <h5> Name</h5></div>
-                < div className='col-2 fs-3'> <h5>Email</h5></div>
-                < div className='col-2 fs-3'> <h5>Service</h5></div>
-                < div className='col-2 fs-3'> <h5>Status</h5></div>
-                < div className='col-2 fs-3 text-center'> <h5>Action</h5></div>
+            <div className='m-2 text-dark d-flex justify-content-around align-items-center bg-white py-3 rounded'>
+                < div className='col-2'> <h5> Name</h5></div>
+                < div className='col-2'> <h5>Email</h5></div>
+                < div className='col-2'> <h5>Service</h5></div>
+                < div className='col-2'> <h5>Status</h5></div>
+                < div className='col-2 text-center'> <h5>Action</h5></div>
             </div >
             {
                 loading && <div className="row my-5">
-                    <div className="spinner-border text-danger mx-auto" role="status">
+                    <div className="spinner-border text-brand mx-auto" role="status">
                         <span className="visually-hidden"></span>
                     </div>
                 </div>

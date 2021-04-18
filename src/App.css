@@ -22,3 +22,13 @@
     background-color: #d1561d !important;
     color: #fff !important;
 }
+.tranfrom-hover:hover{
+    transform: scale(1.05);
+    transition: ease-in-out 1.2s;
+}
+.bg-main{
+    background-color: #FFF8F5;
+}
+.bg-dashboard{
+    background-color: #FFF8F5;
+}

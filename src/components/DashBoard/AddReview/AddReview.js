@@ -38,7 +38,7 @@ const AddReview = () => {
             },
             body: JSON.stringify(reviewData)
         })
-        history.push(`/dashboard/manageServices`);
+        history.push(`/`);
     };
 
     return (
