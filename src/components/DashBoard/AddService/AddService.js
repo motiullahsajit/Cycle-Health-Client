@@ -47,7 +47,9 @@ const AddService = () => {
                 <input name="description" className='w-100 py-2 my-2' placeholder='Description' type="text" {...register("description", { required: true })} />
                 <h5 className="text-secondary">Select Image</h5>
                 <input name="imageURL" className='my-3' type="file" onChange={handleImageUpload} />
-                {errors.exampleRequired && <span>This field is required</span>}
+                {errors.name && <span>This field is required</span>}
+                {errors.price && <span>This field is required</span>}
+                {errors.description && <span>This field is required</span>}
                 <input className='btn btn-brand-filled w-100' type="submit" value='Add' />
             </form>
         </div>

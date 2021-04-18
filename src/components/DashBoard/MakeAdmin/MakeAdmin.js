@@ -23,7 +23,8 @@ const MakeAdmin = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input name="name" className='w-100 py-2 my-2' placeholder="Admin's name" type='text' {...register("name", { required: true })} />
                 <input name="email" className='w-100 py-2 my-2' placeholder="Admin's email" type='email' {...register("email", { required: true })} />
-                {errors.exampleRequired && <span>This field is required</span>}
+                {errors.name && <span>This field is required</span>}
+                {errors.email && <span>This field is required</span>}
                 <input className='btn btn-brand-filled w-100' type="submit" value='Make Admin' />
             </form>
         </div>

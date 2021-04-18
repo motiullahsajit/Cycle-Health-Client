@@ -13,7 +13,6 @@ const Admins = () => {
         fetchData().then(data => setAdmins(data?.data))
     }, [])
 
-
     return (
         <div className='col-md-6 mt-5'>
             <div className="row bg-white my-3 py-3">

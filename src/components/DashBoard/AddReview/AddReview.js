@@ -51,7 +51,10 @@ const AddReview = () => {
                 <input name="rating" className='w-100 py-2 my-2' placeholder='Your Ratings' type="number" {...register("rating", { required: true })} />
                 <h5 className="text-secondary">Your Image</h5>
                 <input name="imageURL" className='my-3' type="file" onChange={handleImageUpload} />
-                {errors.exampleRequired && <span>This field is required</span>}
+                {errors.name && <span>This field is required</span>}
+                {errors.text && <span>This field is required</span>}
+                {errors.review && <span>This field is required</span>}
+                {errors.rating && <span>This field is required</span>}
                 <input className='btn btn-brand-filled w-100' type="submit" value='Submit' />
             </form>
         </div>

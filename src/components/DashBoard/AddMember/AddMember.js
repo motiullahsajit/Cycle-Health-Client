@@ -49,7 +49,9 @@ const AddMember = () => {
                 <input name="email" className='w-100 py-2 my-2' placeholder='Email' type="text" {...register("email", { required: true })} />
                 <h5 className="text-secondary">Image</h5>
                 <input name="imageURL" className='my-3' type="file" onChange={handleImageUpload} />
-                {errors.exampleRequired && <span>This field is required</span>}
+                {errors.name && <span>This field is required</span>}
+                {errors.postion && <span>This field is required</span>}
+                {errors.email && <span>This field is required</span>}
                 <input className='btn btn-brand-filled w-100' type="submit" value='Submit' />
             </form>
         </div>

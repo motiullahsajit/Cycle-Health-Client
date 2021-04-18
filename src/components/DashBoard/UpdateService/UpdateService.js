@@ -49,7 +49,7 @@ const UpdateService = () => {
         history.push(`/dashboard/manageServices`);
     };
 
-    
+
     return (
         <div className="col-md-4">
             <h2 className='text-brand text-center'>Service Information</h2>
@@ -58,8 +58,10 @@ const UpdateService = () => {
                 <input name="price" className='w-100 py-2 my-2' defaultValue={updateItem.price} placeholder='Service price' type='number' {...register("price", { required: true })} />
                 <input name="description" className='w-100 py-2 my-2' defaultValue={updateItem.description} placeholder='Description' type="text" {...register("description", { required: true })} />
                 <h5 className="text-secondary">ReUpload Image</h5>
-                <input name="imageURL" className='my-3' type="file"  defaultValue={updateItem.imageURL} onChange={handleImageUpload} />
-                {errors.exampleRequired && <span>This field is required</span>}
+                <input name="imageURL" className='my-3' type="file" defaultValue={updateItem.imageURL} onChange={handleImageUpload} />
+                {errors.name && <span>This field is required</span>}
+                {errors.price && <span>This field is required</span>}
+                {errors.description && <span>This field is required</span>}
                 <input className='btn btn-brand-filled w-100' type="submit" value='Update' />
             </form>
         </div>

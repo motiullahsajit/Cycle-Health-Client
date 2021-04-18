@@ -3,7 +3,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../../App';
 import BookedItem from '../BookedItem/BookedItem';
 
-
 const BookingList = () => {
     document.title = 'Booking List';
     const [loggedInUser] = useContext(UserContext);

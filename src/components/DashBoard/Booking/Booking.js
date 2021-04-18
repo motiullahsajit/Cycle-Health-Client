@@ -9,6 +9,7 @@ const Booking = () => {
     const { id } = useParams();
     const [loggedInUser] = useContext(UserContext);
     const [bookingItem, setBookingItem] = useState({});
+    console.log(bookingItem)
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     useEffect(() => {
@@ -49,7 +50,7 @@ const Booking = () => {
 
     return (
         <>
-        {id==='booking' && <h1 className='text-brand my-3'>You haven't selected the service..!!</h1> }
+            {id === 'booking' && <h1 className='text-brand my-3'>You haven't selected the service..!!</h1>}
             <div className='col-md-4'>
                 <h2 className='text-brand'>Booking Details</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -57,7 +58,9 @@ const Booking = () => {
                     <input className='w-100 py-2 my-2' name='email' placeholder='Your email' defaultValue={loggedInUser.email} {...register("email", { required: true })} />
                     <input className='w-100 py-2 my-2' name='serviceName' placeholder='service' defaultValue={bookingItem.name} {...register("serviceName", { required: true })} />
                     <input className='w-100 py-2 my-2' name='address' placeholder='Your address'  {...register("address", { required: true })} />
-                    {errors.exampleRequired && <span>This field is required</span>}
+                    {errors.name && <span>This field is required</span>}
+                    {errors.ema && <span>This field is required</span>}
+                    {errors.service && <span>This field is required</span>}
                     {
                         bookingData ? <><button className="btn btn-brand-filled" onClick={() => setBookingData(null)}>Change Info</button></> : <div className='my-3'> <p className='text-brand'>Your Service Charge is {bookingItem.price}$</p> <input className='btn btn-brand-filled' type="submit" value='Confirm' /></div>
                     }
